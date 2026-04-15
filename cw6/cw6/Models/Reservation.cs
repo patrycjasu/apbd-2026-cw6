@@ -1,13 +1,17 @@
-﻿namespace cw6.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace cw6.Models;
 
 public class Reservation
 {
     public int Id { get; set; }
     public int RoomId { get; set; }
+    [Required]
     public string OrganizerName { get; set; }
+    [Required]
     public string Topic { get; set; }
-    public DateTime Date { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
-    public StatusEnum Status { get; set; }
+    public DateOnly Date { get; set; }
+    public TimeOnly StartTime { get; set; }
+    public TimeOnly EndTime { get; set; }
+    public string Status { get; set; }
 }
